@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const app = express();
 //importamos la libreria mongoose para conectar la data base
