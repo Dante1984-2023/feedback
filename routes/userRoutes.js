@@ -6,15 +6,16 @@ const {
     paginaPrincipal,
     paginaError,
     registrarUsuario,
+    paginaRegistro,
+    paginaLogin,
     paginaPrueba
 } = require('../controllers/userControllers')
 
 //Cambiamos los app por routes
 
 router.get('/', paginaPrincipal);
-
-   //callback una funcion adentro de otra funcion
-  //requiere al servidor datos y se le responde con datos
+router.get('/login', paginaLogin);
+router.get('/registrar', paginaRegistro);
 
 router.post('/error',paginaError);
 
