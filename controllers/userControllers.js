@@ -13,15 +13,15 @@ const paginaPrincipal = (req, res) => {
 
 const paginaError = (req, res) => { 
     console.log('Error');
-    res.status(500).send(`<h1>Todo mal!!</h1>`)
+    res.status(500).send(`<h1>Todo mal!!</h1>`);
 }
 
 const paginaLogin = (req, res) => {
-    res.status(500).send(`<h1>Página para el Login</h1>`)
+    res.status(500).render('../views/login.hbs');
 }
 
 const paginaRegistro = (req, res)=> {
-    res.status(200).render('../views/registro.hbs')
+    res.status(200).render('../views/registro.hbs');
 }
 
 const registrarUsuario = async (req, res) => {
@@ -119,9 +119,8 @@ const loginUsuario = async (req, res) => {
 
 
         if(validarPassword){
-            return res.status(400).json({
-                Administracion: 'Bienvenido Administrador'
-            })
+            return res.status(200).render('../views/admin.hbs')
+            
         }else{
             return res.status(400).json({
                 Error: 'Password incorrecto'
