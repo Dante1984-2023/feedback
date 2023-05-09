@@ -7,13 +7,13 @@ const MONGOATLAS = process.env.MONGOATLAS;
 
 
 //Conexion a la database de mongo - 2
-mongoose.connect(MONGOLOCAL, {
+mongoose.connect(MONGOATLAS, {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
 
 })
    .then(()=>{
-       console.log('Database conectada a MONGOLOCAL');
+       console.log('Database conectada a MONGOATLAS');
    })
    .catch((error)=>{
     console.log(`El error es: ${error}`);
