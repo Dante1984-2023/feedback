@@ -8,7 +8,8 @@ const {
     registrarUsuario,
     paginaRegistro,
     paginaLogin,
-    paginaPrueba
+    paginaPrueba,
+    loginUsuario
 } = require('../controllers/userControllers')
 
 //Cambiamos los app por routes
@@ -16,8 +17,18 @@ const {
 router.get('/', paginaPrincipal);
 router.get('/login', paginaLogin);
 router.get('/registrar', paginaRegistro);
+router.get('/error',paginaError);
 
-router.post('/error',paginaError);
+
+router.post('/login',
+[
+    
+    check('email').isEmail(),
+    check('password').isLength({min:5}),
+] , loginUsuario);
+
+
+
 
 router.post('/',
 [

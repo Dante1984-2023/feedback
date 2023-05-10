@@ -17,12 +17,15 @@ const paginaError = (req, res) => {
 }
 
 const paginaLogin = (req, res) => {
-    res.status(500).render('../views/login.hbs');
+    res.status(200).render('../views/login.hbs');
 }
+
+
 
 const paginaRegistro = (req, res)=> {
     res.status(200).render('../views/registro.hbs');
 }
+
 
 const registrarUsuario = async (req, res) => {
     
@@ -119,7 +122,7 @@ const loginUsuario = async (req, res) => {
 
 
         if(validarPassword){
-            return res.status(200).render('../views/admin.hbs')
+            return res.status(200).render('../views/admin.hbs');
             
         }else{
             return res.status(400).json({
@@ -127,12 +130,14 @@ const loginUsuario = async (req, res) => {
             })
         }
 
+
     } catch (error) {
         return res.status(400).json({
             Error: 'Email o Password incorrectos'
         })
     }
 }
+
 
 
 const paginaPrueba = (req, res) => {
@@ -157,11 +162,14 @@ const paginaPrueba = (req, res) => {
 };
 
 module.exports = {
+    
+    
     paginaPrincipal,
-    paginaRegistro,
     paginaError,
     paginaLogin,
     registrarUsuario,
+    paginaRegistro,
     loginUsuario,
     paginaPrueba
+
 }
